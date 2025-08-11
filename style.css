@@ -1,0 +1,112 @@
+/*  Graviti Production Planner – CSS v2.1  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color-white:#ffffff;
+  --color-black:#000000;
+  --color-cream-50:#fcfcf9;
+  --color-cream-100:#fffefd;
+  --color-gray-200:#f5f5f5;
+  --color-gray-300:#a7a9a9;
+  --color-gray-400:#777c7c;
+  --color-slate-500:#626c71;
+  --color-brown-600:#5e5240;
+  --color-charcoal-700:#1f2121;
+  --color-charcoal-800:#262828;
+  --color-slate-900:#13343b;
+  --color-teal-300:#32b8c6;
+  --color-teal-500:#21808d;
+  --color-teal-600:#1d7480;
+  --color-red-400:#ff5459;
+  --color-red-500:#c0152f;
+  --color-orange-500:#a84b2f;
+  --color-bg-1:rgba(59,130,246,.08);--color-bg-2:rgba(245,158,11,.08);--color-bg-3:rgba(34,197,94,.08);--color-bg-4:rgba(239,68,68,.08);
+  --color-primary:var(--color-teal-500);--color-primary-hover:var(--color-teal-600);--color-error:var(--color-red-500);--color-warning:var(--color-orange-500);
+  --color-background:var(--color-cream-50);--color-surface:var(--color-cream-100);--color-text:var(--color-slate-900);--color-text-secondary:var(--color-slate-500);
+  --color-border:rgba(94,82,64,.2);--color-card-border:rgba(94,82,64,.12);--radius-base:8px;--radius-lg:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.04);
+  --font-family-base:'Inter',sans-serif;
+}
+
+[data-color-scheme="dark"] {
+  --color-background:var(--color-charcoal-700);--color-surface:var(--color-charcoal-800);--color-text:#f5f5f5;--color-text-secondary:#a7a9a9;
+  --color-primary:var(--color-teal-300);--color-border:rgba(167,169,169,.3);
+}
+
+* {box-sizing:border-box;margin:0;padding:0;}
+body {font-family:var(--font-family-base);background:var(--color-background);color:var(--color-text);line-height:1.6;}
+.app-container {min-height:100vh;display:flex;flex-direction:column;}
+
+/* LOGIN */
+.login-container {display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(135deg,var(--color-bg-1),var(--color-bg-3));padding:20px;}
+.login-form {background:var(--color-surface);padding:40px;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);width:100%;max-width:400px;border:1px solid var(--color-card-border);}
+.logo-container {text-align:center;margin-bottom:30px;}
+.logo {max-width:170px;margin-bottom:10px;}
+.company-name {font-size:1.25rem;font-weight:600;color:var(--color-text);}
+.app-title {font-size:.9rem;color:var(--color-text-secondary);margin-top:4px;}
+.form-group {margin-bottom:15px;}
+.form-input {width:100%;padding:12px;border:1px solid var(--color-border);border-radius:var(--radius-base);background:var(--color-surface);color:var(--color-text);}
+.login-btn, .control-btn {padding:10px 16px;border:none;border-radius:var(--radius-base);cursor:pointer;font-weight:500;transition:.2s;}
+.login-btn {background:var(--color-primary);color:#fff;width:100%;}
+.login-btn:hover {background:var(--color-primary-hover);}
+.control-btn {background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-text);}
+.control-btn:hover {border-color:var(--color-primary);}
+.primary-btn {background:var(--color-primary);color:#fff;border-color:var(--color-primary);}
+.primary-btn:hover {background:var(--color-primary-hover);}
+.danger-btn {background:var(--color-error);color:#fff;border-color:var(--color-error);}
+.error-message {color:var(--color-error);font-size:.8rem;margin-top:6px;text-align:center;}
+.demo-note {font-size:.7rem;color:var(--color-text-secondary);text-align:center;margin-top:10px;}
+
+/* HEADER */
+.app-header {display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid var(--color-border);background:var(--color-surface);}
+.header-logo {height:24px;margin-right:10px;}
+.header-title {font-size:1.1rem;font-weight:600;}
+.header-right {display:flex;align-items:center;gap:12px;font-size:.85rem;}
+.theme-toggle, .logout-btn {padding:6px 10px;font-size:.8rem;}
+.user-info {display:flex;align-items:center;gap:4px;}
+
+/* MAIN */
+.main-content {flex:1;padding:20px;overflow-x:auto;}
+.content-header {display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.date-display {font-weight:600;}
+.controls {display:flex;gap:6px;flex-wrap:wrap;}
+
+/* TABLE */
+.data-table-container {background:var(--color-surface);border:1px solid var(--color-card-border);border-radius:var(--radius-lg);overflow:hidden;}
+.data-table {width:100%;border-collapse:collapse;font-size:.85rem;}
+.data-table th,.data-table td {padding:10px 6px;border-bottom:1px solid var(--color-border);text-align:center;}
+.data-table th {background:var(--color-bg-1);font-weight:600;position:sticky;top:0;z-index:2;}
+.data-table td:first-child {min-width:200px;text-align:left;font-weight:500;}
+.editable-cell:hover {background:var(--color-bg-2)!important;cursor:pointer;}
+.cell-input,.header-input {width:100%;border:1px solid var(--color-primary);border-radius:4px;padding:2px;text-align:center;background:var(--color-surface);color:var(--color-text);}
+.delete-row-btn {background:var(--color-error);color:#fff;border:none;border-radius:4px;padding:2px 6px;font-size:.7rem;cursor:pointer;}
+.delete-row-btn:hover {background:var(--color-red-400);}
+
+/* MODAL */
+.modal-overlay {position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px;}
+.modal {background:var(--color-surface);border-radius:var(--radius-lg);padding:20px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;border:1px solid var(--color-card-border);}
+.modal-header {display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;}
+.modal-close {background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--color-text-secondary);}
+.user-table {width:100%;border-collapse:collapse;margin-top:10px;}
+.user-table th,.user-table td {padding:8px;border-bottom:1px solid var(--color-border);text-align:left;}
+.status {padding:4px 8px;border-radius:999px;font-size:.7rem;font-weight:500;}
+.status--warning {background:rgba(var(--color-orange-500),.15);color:var(--color-orange-500);}
+.status--success {background:rgba(var(--color-teal-500),.15);color:var(--color-teal-500);}
+
+/* WATERMARK */
+body::after {
+  content:"@GK";
+  position:fixed;
+  bottom:8px;
+  right:12px;
+  font-size:24px;
+  color:var(--color-text);
+  opacity:.05;
+  pointer-events:none;
+  z-index:10000;
+}
+
+/* PRINT */
+@media print {
+  .app-header,.controls,.modal-overlay {display:none!important;}
+  .data-table {font-size:10px;}
+}
